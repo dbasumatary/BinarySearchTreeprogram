@@ -17,12 +17,11 @@ public class MyBinaryTreeMain {
         myBinaryTree.add(63);
         myBinaryTree.add(67);
 
-
         myBinaryTree.printBinaryTree();
-        //myBinaryTree.printInOrderWithLevel(myBinaryTree.getRoot(), 0);
-        //myBinaryTree.printTreeDiagramLevelOrder();
 
         System.out.println();
         System.out.println("The size of the Binary Search Tree is : " + myBinaryTree.getSize());
+        System.out.println("Is 63 present in the Binary Search Tree? " + myBinaryTree.searchTree(63));
+
     }
 }

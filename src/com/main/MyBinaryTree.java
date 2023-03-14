@@ -55,6 +55,30 @@ public class MyBinaryTree<K extends Comparable<K>>{
         return this.getSizeRecursively(root);
     }
 
+
+    private boolean searchTreeRecursively(MyBinaryNode<K> current, K key) {
+
+        //If the current node is null then the key not found
+        if (current == null) {
+            return false;
+        }
+        //If the current node's key matches the search key, the method returns true
+        int compareResult = key.compareTo(current.key);
+        if (compareResult == 0) {
+            return true;
+        }
+
+        // If the search key is less than the current node's key, the method recurse on the left subtree.
+        // Otherwise, it recurse on the right subtree.
+        return compareResult < 0 ? searchTreeRecursively(current.left, key) : searchTreeRecursively(current.right, key);
+    }
+
+    //This method search for a key in the binary search tree.
+    // It takes a key as input and returns a boolean value
+    public boolean searchTree(K key) {
+        return searchTreeRecursively(root, key);
+    }
+
     //prints the root node of the binary tree
     public void printBinaryTree() {
         System.out.println("My Tree: " + root);
